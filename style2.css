@@ -1,0 +1,31 @@
+body{
+    color: white;
+   
+}
+
+@media screen {
+    body{
+        background: lightgray;
+    }
+}
+
+@media screen and (orientation:portrait){
+    body::after{
+        content: "Portrait";
+    } 
+}
+@media screen and (orientation:landscape){
+    body::after{
+        content:"Landspace";
+    }
+}
+@media  (max-width:500px){
+    body{
+        background-color: lightgreen;
+    }
+}
+@media all and (max-width : 500px) and (orientation:landscape){
+    body{
+        background-color: darkblue;
+    }
+}

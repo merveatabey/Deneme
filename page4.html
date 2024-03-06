@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #id-level{
+            color:palevioletred;
+        }
+        .class-level{
+            color: aquamarine !important;     /* !important özelliği stilin baskın olmasını sağlar   */
+        }
+        p{
+            color: red !important;
+        }
+        .box{
+            width: 400px;
+            height: 400px;
+            padding: 16px;
+            background-color: chocolate;
+        }
+        .child{
+             box-sizing: border-box;  /*toplam genişliğe ve yüksekliğe padding ve border'ı dahil eder.  */
+            background-color: cadetblue;
+        }
+        footer{
+            padding :16px;
+            text-align: center;
+            border-top: 2px solid;
+           
+        }
+        div + p::after{                 /*div den sonra gelen p'de after denemesi */
+            content: "after denemesi"
+        }
+        #deneme::before{
+            content: "before denemesi";
+            color: gray;
+        }
+        a::after{
+            content: '('attr(href)')';    /*seçilen etikette bulunan nitelik değerleri de dinamik olarak kullanılır. */ 
+        }
+        .position{
+            width: 400px;
+            height: 400px;
+            background-color: crimson;
+           position: fixed;
+            left: 200px;
+            top: 10px;
+            
+        }
+        button{
+            position:sticky;
+        }
+    </style>
+</head>
+<body>
+    <p id="id-level" class="class-level">Stil deneme paragrafı</p>
+    <div class="box">
+        <div class="box child"></div>
+        <span>this is a span</span>
+    </div>
+    <div class="position">
+        <button>fsdfd</button>
+    </div>
+    <p id="deneme">Devsnets frontend camp</p>
+    <a href="https://google.com">Google</a>
+    <footer>
+        footer denemesi
+    </footer>
+</body>
+</html>

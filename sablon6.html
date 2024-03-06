@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yazdırılabilir Web Sayfası</title>
+    <style>
+        /* CSS ile modal stilleri */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.5);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 210mm; /* A4 boyutu */
+            height: 297mm; /* A4 boyutu */
+            box-sizing: border-box;
+        }
+        #content {
+            display: none; /* Ön izleme sırasında gizle */
+        }
+    </style>
+</head>
+<body>
+    <div id="content" class="container">
+        <h1>Yazdırılabilir Web Sayfası</h1>
+        <p>Bu bir yazdırılabilir web sayfasıdır. Web sayfasını yazdırmak istediğinizde, aşağıdaki düğmeye tıklayabilirsiniz.</p>
+    </div>
+    
+    <div class="onizleme">
+        <button onclick="openModal()">Ön İzleme</button>
+    </div>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content" id="previewContent">
+            <!-- Ön izleme içeriği buraya eklenecek -->
+        </div>
+    </div>
+
+    <script>
+        // Modalı aç
+        function openModal() {
+            var content = document.getElementById('content').innerHTML;
+            document.getElementById('previewContent').innerHTML = '<div style="width: 210mm; height: 297mm;">' + content + '</div>';
+            document.getElementById('myModal').style.display = "block";
+        }
+    </script>
+</body>
+</html>
